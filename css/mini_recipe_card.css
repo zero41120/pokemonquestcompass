@@ -1,0 +1,83 @@
+.mini-recipe-card {
+    --card-size: 250;
+    --relative-size: 0.4;
+    margin: 5px;
+    display: grid;
+    text-align: center;
+    font-weight: 900;
+    width: calc(var(--card-size) * 1px);
+    background-color: transparent;
+    grid-template-columns: calc(var(--card-size) * 1px * var(--relative-size)) 1fr;
+    grid-template-rows: 25px calc(var(--card-size) * 1px * var(--relative-size)) 17px;
+    grid-template-areas: "title goodness" "image ingredient" "chance ingredient";
+}
+
+.mini-recipe-name {
+    grid-area: title;
+    background-color: var(--bar-dark-brown);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 12px;
+    box-shadow: 10px 10px 0px var(--cooking-card-light-yellow);
+}
+
+.mini-recipe-goodness {
+    grid-area: goodness;
+    font-size: 12px;
+    text-align: center;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-color: var(--bar-dark-brown);
+    border-top-right-radius: 10px;
+    background-color: var(--cooking-card-light-yellow);
+}
+
+.mini-recipe-chance {
+    grid-area: chance;
+    display: flex;
+    background-color: lightgray;
+    border: 2px solid var(--bar-dark-brown);
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px -10px 0px var(--cooking-card-light-yellow);
+}
+
+.mini-recipe-chance-literal {
+    font-size: 10;
+    text-align: center;
+    line-height: 14px;
+    width: 30%;
+    border-bottom-left-radius: 8px;
+    background-color: var(--bar-dark-brown);
+}
+
+.mini-recipe-chance-bar {
+    --progress-color: rgb(114, 180, 160);
+    --progress-width: 100;
+    background-color: var(--progress-color);
+    border-top-right-radius: 8px;
+    width: calc(var(--progress-width) * .7 * 1%);
+}
+
+
+.mini-recipe-image {
+    grid-area: image;
+    border-left: 2px solid var(--bar-dark-brown);
+    background-color: var(--cooking-card-light-yellow);
+    object-fit: cover;
+    width: calc(var(--card-size) * 1px * var(--relative-size));
+    height: calc(var(--card-size) * 1px * var(--relative-size));
+}
+
+.mini-recipe-methods {
+    grid-area: ingredient;
+    background-color: var(--cooking-card-light-yellow);
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-color: var(--bar-dark-brown);
+    border-bottom-right-radius: 10px;
+}
+
+.ingredient-bar {
+    background-color: transparent;
+}

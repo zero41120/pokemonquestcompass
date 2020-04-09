@@ -1,0 +1,100 @@
+.poke-card {
+    --card-size: 70;
+    margin-right: 1px;
+    margin-top: 10px;
+	display: grid;
+    width: calc(var(--card-size) * 1px);
+    text-align: center;
+    font-weight: 900;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 12px calc(var(--card-size) * 1px) 12px 17px 12px;
+    grid-template-areas: 
+        "pokeid ......"
+        "pokeimg pokeimg"
+        "poketyp poketyp"
+        "pokenam pokenam"
+        "pokecha pokecha";
+}
+
+.poke-card-id{
+	grid-area: pokeid;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: var(--selected-color, white);
+    padding-top: 1px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2px;
+}
+
+.poke-card-icon {
+    grid-area: pokeimg;
+}
+
+.poke-card-icon img{
+    width: calc(var(--card-size) * 1px);
+    height: calc(var(--card-size) * 1px);
+    border: 3px solid var(--selected-color, white);
+    border-top-right-radius: 10px;
+    background-color: var(--selected-color, white);
+    object-fit: cover;
+    touch-action: manipulation;
+}
+.poke-card-type {
+    grid-area: poketyp;
+    background-color: var(--selected-color, white);
+    display: flex;
+}
+.poke-type {
+    flex: 1;
+    grid-area: poketyp;
+    font-size: 10px;
+    font-weight: 400;
+    min-width: 25px;
+    line-height: 12px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 9px;
+    border: 1px solid var(--type-outline-color);
+    box-shadow: 0 0 1px 1px white inset;
+    text-shadow: 0 0 2px var(--type-shadow-color);
+    color: white;
+}
+
+.normal-bg{ background-color: #A8A878}
+.fire-bg { background-color: #F08030; }
+.fighting-bg { background-color: #C03028; }
+.water-bg { background-color: #6890F0; }
+.flying-bg { background-color: #A890F0; }
+.grass-bg {background-color: #78C850; }
+.poison-bg { background-color: #A040A0; }
+.electric-bg { background-color: #F8D030; }
+.ground-bg { background-color: #E0C068; }
+.psychic-bg { background-color: #F85888; }
+.rock-bg { background-color: #B8A038; }
+.ice-bg { background-color: #98D8D8; }
+.bug-bg { background-color: #A8B820; }
+.dragon-bg { background-color: #7038F8; }
+.ghost-bg { background-color: #705898; }
+.dark-bg { background-color: #705848; }
+.steel-bg { background-color: #B8B8D0; }
+.fairy-bg { background-color: #EE99AC; }
+.unknown-bg { background-color: #68A090; }
+
+.poke-card-name{
+    grid-area: pokenam;
+    background-color: var(--selected-color, white);
+    padding-top: 2px;
+    line-height: 15px;
+    font-size: 12;
+}
+
+.poke-card-chance {
+    grid-area: pokecha;
+    background-color: var(--selected-color, white);
+    line-height: 12px;
+    font-size: 10;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 4px 0px 0px var(--card-box-shadow-color);
+}

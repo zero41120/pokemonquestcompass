@@ -1,0 +1,65 @@
+
+.pot-card {
+    margin-right: 1px;
+    margin-top: 10px;
+	display: grid;
+    width: 70px;
+    text-align: center;
+    font-weight: 900;
+    grid-template-columns: 1fr;
+    grid-template-rows:  17px 76px 17px;
+    grid-template-areas: 
+        "name"
+        "img"
+        "attract";
+}
+
+.pot-name {
+	grid-area: name;
+	background-color: var(--bar-dark-brown);
+	border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-top: 1px;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 2px;
+}
+
+.pot-img {
+	grid-area: img;
+}
+
+.pot-img img{
+    width: 70px;
+    height: 70px;
+    background-color: var(--cooking-card-light-yellow);
+    object-fit: cover;
+}
+
+.pot-attract {
+	grid-area: attract;
+	display: flex;
+	background-color: var(--bar-light-brown);
+ 	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 4px 0px 0px var(--bar-light-brown);
+    line-height: 17px;
+}
+
+.pot-attract-type {
+	flex: 1;
+    font-size: 10px;
+    font-weight: 400;
+    min-width: 25px;
+    line-height: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 9px;
+    border: 1px solid var(--type-outline-color);
+    box-shadow: 0 0 1px 1px white inset;
+    color: white;
+}
+
+.selected-pot img{
+    background-color: var(--selected-green-color);
+}

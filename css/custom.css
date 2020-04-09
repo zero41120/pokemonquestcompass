@@ -1,0 +1,128 @@
+:root {
+    --type-outline-color: #656557;
+    --type-shadow-color: #656565;
+    --card-box-shadow-color: #BCBCBC;
+    --bar-dark-brown: #d9a667;
+    --bar-light-brown: #f3b166;
+    --cooking-card-light-yellow: #ffe1a1;
+    --cooking-card-tab-yellow: #e9b942;
+    --cooking-card-divider: #ffc617;
+    --cooking-card-subtitle: #dfc385;
+    --chating-outline: #EB795D;
+    --chating-background: #F8D161;
+    --unknown-type-color: #68A090;
+    --selected-green-color: #78C850;
+    --dex-red: #6d1b0f;
+    --dex-grey: #9a989d;
+    --dex-inner: #f4ecd7;
+    --dex-light-divider: #e8e0cb;
+    --dex-dark-divider: #dad5c1;
+    --box-yellow: #f2b940;
+    --experience-blue: #a6fafa;
+}
+
+@font-face {
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-display: swap;
+   font-weight: 400;
+   src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+ }
+
+@font-face {
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-display: swap;
+   font-weight: 900;
+   src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'),
+        url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'),
+        url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+
+* {
+	font-family: 'Noto Sans TC';
+}
+.basic-background {
+    background: url(../img/background.png);
+    border-radius: 25px;
+    padding-bottom: 3%;
+    box-shadow: 0px 10px 8px #888888;
+}
+
+.pokedex-background {
+    position: relative;
+    border: 10px solid transparent;
+    border-radius: 10px;
+    background: var(--dex-inner);
+    background-clip: padding-box;
+    box-shadow: 0 3px 7px black;
+}
+
+.pokedex-background::after {
+    position: absolute;
+    top: -10px; bottom: -10px;
+    left: -10px; right: -10px;
+    background: linear-gradient(var(--dex-red) 50%, var(--dex-grey) 50%);
+    content: '';
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.whisper-message {
+    color: #b2bec3;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NotoSans";
+    src: url(../fonts/NotoSansCJKtc-Bold.otf) format("opentype");
+    font-display: swap;
+}
+
+.tip-top { position: relative; }
+
+.tip-top [class^="info-"]{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 100%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tip-top:hover [class^="info-"]{
+    visibility: visible;
+    opacity: 1;
+}
+
+.tip-bottom { position: relative; }
+
+.tip-bottom [class^="info-"]{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 100%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tip-bottom:hover [class^="info-"]{
+    visibility: visible;
+    opacity: 1;
+}
+
+.disable-select {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}

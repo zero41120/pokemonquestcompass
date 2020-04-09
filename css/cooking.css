@@ -1,0 +1,127 @@
+#cooking-page {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 6);
+    grid-template-areas: 
+        "cookpot"
+        "cookpot"
+        "small"
+        "big"
+        "result"
+        "result"
+}
+
+.ingredient-bar-small{ grid-area: small; }
+.ingredient-bar-big { grid-area: big; }
+
+
+#attract-page {
+    grid-area: attract;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;  
+    flex-wrap: wrap;
+}
+
+@media all and (max-width: 600px) {
+    #attract-page {
+        justify-content: center;
+    }
+}
+
+.cooking-pot {
+    grid-area: cookpot;
+    background-size: cover;
+    width: 320px;
+    height: 218px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#slot-1 { position: absolute; top:  27px; left:  92px; }
+#slot-2 { position: absolute; top:  27px; left: 168px; }
+#slot-3 { position: absolute; top: 104px; left:  53px; }
+#slot-4 { position: absolute; top: 104px; left: 130px; }
+#slot-5 { position: absolute; top: 104px; left: 206px; }
+
+
+/* Mimics the cooking recipe that shows in game */
+.cooking-result {
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: 3fr 4fr 4fr;
+    grid-template-rows: 33px 20px 100px;
+    grid-template-areas: 
+        "title title title"
+        "image fixed-title fixed-title"
+        "image recipe-detail attract-detail";
+    text-align: left;
+    background-color: var(--cooking-card-light-yellow);
+    border-radius: 5px;
+    border-left: 12px solid var(--cooking-card-tab-yellow);
+    height: 120px;
+    max-width: 450px;
+}
+
+/* The top bar with number and recipe name     border-bottom: 3px solid #ffc617;
+*/
+.result-header {
+    grid-area: title;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--cooking-card-divider);
+}
+
+/* Top number*/
+#result-id {
+    display: inline-block;
+	background-color: var(--cooking-card-divider);
+    width: 30px;
+    text-align: center;
+    color: white;
+}
+
+/* Top recipe name*/
+#result-name {
+    display: inline-block;
+}
+
+/* The pot image */
+#result-image {
+    max-width: 110px;
+	grid-area: image;
+    object-fit: contain;
+    padding: 5px;
+}
+
+/* Static text of ingredient & pokemon */
+.result-desc-title {
+    grid-area: fixed-title;
+    font-weight: bold;
+    font-size: 12px;
+	color: var(--cooking-card-subtitle);
+    display: flex;
+}
+
+.result-desc-title span {
+    flex: 1;
+    border-bottom: 2px solid var(--cooking-card-subtitle);
+    margin-right: 5px;
+}
+
+/* Dynamic text of ingredients & attracted pokemon*/
+.result-desc-detail {
+    grid-area: detail;
+    font-weight: bold;
+    vertical-align: top;
+    font-size: 14px;
+    color: #2d3436;
+}
+#result-comp {
+    grid-area: recipe-detail;
+}
+#result-type {
+    grid-area: attract-detail;
+}

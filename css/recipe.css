@@ -1,0 +1,107 @@
+.recipe-grid {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-template-areas: 
+		"title title"
+		"pot result"
+		"pot result";
+}
+
+@media all and (max-width: 600px) {
+    .recipe-grid {
+		display: block;
+	}
+	#attract-page {
+        justify-content: center;
+    }
+}
+
+.recipe-header{
+	grid-area: title;
+	height: 60px;
+	display: flex;
+	padding: 10px;
+}
+
+.recipe-title {
+	flex: 1;
+	height: 40px;
+	text-align: center;
+	background-color: var(--bar-dark-brown);
+	border: 3px solid white;
+   	border-bottom-right-radius: 5px;
+   	border-top-right-radius: 5px;
+}
+
+.cooking-svg {
+	grid-area: icon; 
+	background: url("../img/cooking/cooking_icon.svg") no-repeat top left;
+    background-size: contain;
+    background-color: white;
+   	border: 3px solid white;
+   	border-bottom-left-radius: 5px;
+   	border-top-left-radius: 5px;
+   	width: 40px;
+   	height: 40px;
+}
+
+#pot-page, #method-page, #attract-page{
+	display: flex;
+	flex-wrap: wrap;
+	align-self: start;
+	padding: 10px;
+	margin: 2px;
+}
+
+#pot-page{
+	grid-area: pot;
+	justify-content: center;
+}
+
+.recipe-result{
+	grid-area: result;
+	display: block;
+}
+
+#method-page{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 30px 1fr;
+	grid-template-areas: 
+	"0 1 2 3"
+	"method method method method";
+}
+
+#methods {
+	grid-area: method;
+	border: 2px solid white;
+	border-top: 0px;
+	background-color: var(--cooking-card-light-yellow);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 5px;
+	text-align: center;
+}
+
+
+.goodness-tab {
+	font-size: 12px;
+	line-height: 25px;
+	text-align: center;
+	border: 2px solid white;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	background-color:  var(--bar-dark-brown);
+}
+
+.selected-goodness{
+    background-color: var(--cooking-card-light-yellow);
+   	border-bottom: 0px;
+}
+
+#attract-page {
+	justify-content: center;
+}

@@ -1,0 +1,85 @@
+
+
+/* Contains 3 dex row*/
+.pokemon-page{
+	max-width: 730;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.triple-row{
+	max-width: 370;
+	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+* {
+	--divider-width: 3px;
+}
+
+.swiper-slide {
+	border-left: var(--divider-width) solid var(--dex-light-divider);
+	border-right: var(--divider-width) solid var(--dex-light-divider);
+	display: flex;
+	justify-content: center;
+}
+
+.poke-card-id {
+	letter-spacing: 1px;
+}
+
+.swiper-container-pokemon {
+	border-bottom: 2px solid var(--chating-outline);
+}
+
+.swiper-container-recipe {
+	border-top: 2px solid var(--chating-outline);
+}
+
+
+@media all and (max-width: 405px) {
+	.poke-card { --card-size: 60; }
+}
+@media all and (max-width: 350px) {
+	.poke-card { --card-size: 50; }
+}
+
+#recipe-information-container{
+	height: 100%;
+}
+
+.evolution-card {
+	display: grid;
+	background-color: var(--box-yellow);
+	margin: 27px;
+	height: 87px;
+	text-align: center;
+	grid-template-columns: 80px;
+	grid-template-rows: 17px 50px 20px;
+	grid-template-areas: 
+		"title"
+		"level"
+		"experience";
+	border-radius: 10px;
+}
+.evolution-level-title {
+	grid-area: title;
+	line-height: 17px;
+	color: var(--cooking-card-light-yellow);
+}
+.evolution-level-literal{
+	grid-area: level;
+	font-size: 40;
+	line-height: 50px;
+	color: white;
+}
+
+.evolution-experience {
+	grid-area: experience;
+	background-color: var(--experience-blue);
+	width: 80%;
+	height: 3px;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding-bottom: 10px;
+}
